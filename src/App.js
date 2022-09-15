@@ -1,21 +1,35 @@
 import { useState, useEffect } from 'react';
+import { Route, Routes, Link, useMatch, useNavigate } from 'react-router-dom';
 import './App.css';
+import AllTodo from './Page/AllTodos';
+import SingleTodo from './Page/singleTodo';
+import Form from './Page/Form';
+import Home from './Page/Home';
 
-function App(props) {
+function App() {
+  const navigate = useNavigate()
   const url = "https://glamorous-newt-sundress.cyclic.app/todo"
+  
   const [todo, setTodo] = useState([])
   const nullTodo = {
     title: "",
     description: "",
+    _id: ""
   }
   const [targetTodo, setTargetTodo] = useState(nullTodo)
+
   const getTodo = async() => {
+    const _id = null
     const response = await fetch(url)
     const data = await response.json()
     setTodo(data)
-  }
+    console.log('yo')
+    console.log(data)
+    console.log(data.id)
+    
+  } 
 
-useEffect (() => {getTodo()}, [])
+
 
 const addTodo = async(newTodo) => {
   const response = await fetch(url, {
@@ -30,11 +44,11 @@ const addTodo = async(newTodo) => {
 
 const getTargetTodo = (todo) => {
   setTargetTodo(todo)
-  props.history.push("/edit")
+  navigate("/edit")
 }
 
 const updateTodo = async (todo) => {
-  const responce = await fetch(url + todo.id + "/", {
+  const responce = await fetch(url + todo._id + "/", {
     method: "put",
     headers: {
       "Content-Type": "application/json"
@@ -43,18 +57,51 @@ const updateTodo = async (todo) => {
   })
   getTodo()
 }
-
+console.log(todo._id)
 const deleteTodo = async (todo) => {
-  const response = await fetch(url + todo.id + "/", {
+  const response = await fetch(url + todo._id + "/", {
     method: "delete",
   })
   getTodo()
-  props.history.push("/")
+  navigate("/")
 }
+useEffect (() => {getTodo()}, [])
+
   return (
     <div className="App">
       <header className="App-header">
-       <h1>Hey</h1>
+       <Link to = "/new">
+        <button>New Task</button>
+       </Link>
+        
+        <Routes>
+
+          <Route path = "/" element={
+            <AllTodo todo = {todo}/>}>
+          </Route>
+          <Route path = "/:id" element = {
+            <SingleTodo todo = {todo}
+              edit = {getTargetTodo}
+              deleteTodo = {deleteTodo}
+              match = {useMatch("/:id")}
+              
+            />}>
+          </Route>
+          <Route path ="/new" element = {
+            <Form initialTodo = {nullTodo}
+              handleSubmit = {addTodo}
+              buttonLabel = "create Todo"
+            />}>
+          </Route>
+          <Route path = "/edit" element = {
+            <Form initialTodo = {targetTodo}
+              handleSubmit = {updateTodo}
+              buttonLabel = "update Todo"/>
+          }>
+             
+          </Route>
+        </Routes>
+       
       </header>
     </div>
   );
