@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
 const Todo= ({todo}) => {
-    
+
     return(
         <div>
            <h3>{todo.title}</h3>
@@ -11,7 +11,7 @@ const Todo= ({todo}) => {
            <p>sd</p>
            <Link to = "/:id">
                 <button> single here</button>
-           </Link>          
+           </Link>
         </div>
     )
 }
