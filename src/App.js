@@ -29,7 +29,7 @@ function App() {
     
   } 
 
-
+  useEffect (() => {getTodo()}, [])
 
 const addTodo = async(newTodo) => {
   const response = await fetch(url, {
@@ -65,7 +65,7 @@ const deleteTodo = async (todo) => {
   getTodo()
   navigate("/")
 }
-useEffect (() => {getTodo()}, [])
+
 
   return (
     <div className="App">
