@@ -5,30 +5,24 @@ import AllTodo from './Page/AllTodos';
 import SingleTodo from './Page/singleTodo';
 import Form from './Page/Form';
 import Home from './Page/Home';
+import React from 'react';
 
 function App() {
   const navigate = useNavigate()
   const url = "https://glamorous-newt-sundress.cyclic.app/todo"
-  
+
   const [todo, setTodo] = useState([])
   const nullTodo = {
     title: "",
     description: "",
-    _id: ""
   }
   const [targetTodo, setTargetTodo] = useState(nullTodo)
-
   const getTodo = async() => {
-    const _id = null
     const response = await fetch(url)
     const data = await response.json()
     setTodo(data)
-    console.log('yo')
-    console.log(data)
-    console.log(data.id)
-    
-  } 
-
+    console.log('Data', data[0]._id)
+  }
 
 
 const addTodo = async(newTodo) => {
@@ -48,7 +42,7 @@ const getTargetTodo = (todo) => {
 }
 
 const updateTodo = async (todo) => {
-  const responce = await fetch(url + todo._id + "/", {
+  const response = await fetch(url + todo[0]._id + "/", {
     method: "put",
     headers: {
       "Content-Type": "application/json"
@@ -57,8 +51,8 @@ const updateTodo = async (todo) => {
   })
   getTodo()
 }
-console.log(todo._id)
 const deleteTodo = async (todo) => {
+  console.log('todo._id', todo._id)
   const response = await fetch(url + todo._id + "/", {
     method: "delete",
   })
@@ -73,7 +67,7 @@ useEffect (() => {getTodo()}, [])
        <Link to = "/new">
         <button>New Task</button>
        </Link>
-        
+
         <Routes>
 
           <Route path = "/" element={
@@ -84,7 +78,7 @@ useEffect (() => {getTodo()}, [])
               edit = {getTargetTodo}
               deleteTodo = {deleteTodo}
               match = {useMatch("/:id")}
-              
+
             />}>
           </Route>
           <Route path ="/new" element = {
@@ -98,10 +92,10 @@ useEffect (() => {getTodo()}, [])
               handleSubmit = {updateTodo}
               buttonLabel = "update Todo"/>
           }>
-             
+
           </Route>
         </Routes>
-       
+
       </header>
     </div>
   );
