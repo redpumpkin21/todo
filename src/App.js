@@ -34,6 +34,7 @@ const addTodo = async(newTodo) => {
   })
   getTodo()
 }
+useEffect (() => {getTodo()}, [])
 
 const getTargetTodo = (todo) => {
   setTargetTodo(todo)
@@ -72,6 +73,7 @@ const deleteTodo = async (todo) => {
           <Route path = "/" element={
             <AllTodo todo = {todo}/>}>
           </Route>
+
           <Route path = "/:id" element = {
             <SingleTodo todo = {todo}
               edit = {getTargetTodo}
