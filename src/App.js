@@ -11,7 +11,7 @@ function App() {
   const navigate = useNavigate()
   const url = "https://glamorous-newt-sundress.cyclic.app/todo"
 
-  const [todo, setTodo] = useState([])
+  const [todos, setTodo] = useState([])
   const nullTodo = {
     title: "",
     description: "",
@@ -23,7 +23,7 @@ function App() {
     setTodo(data)
     console.log('Data', data[0]._id)
   }
-
+console.log("test", todos)
 const addTodo = async(newTodo) => {
   const response = await fetch(url, {
     method: "post",
@@ -34,7 +34,7 @@ const addTodo = async(newTodo) => {
   })
   getTodo()
 }
-useEffect (() => {getTodo()}, [])
+ useEffect (() => {getTodo()}, [])
 
 const getTargetTodo = (todo) => {
   setTargetTodo(todo)
@@ -71,11 +71,11 @@ const deleteTodo = async (todo) => {
         <Routes>
 
           <Route path = "/" element={
-            <AllTodo todo = {todo}/>}>
+            <AllTodo todo = {todos}/>}>
           </Route>
 
           <Route path = "/:id" element = {
-            <SingleTodo todo = {todo}
+            <SingleTodo todo = {todos}
               edit = {getTargetTodo}
               deleteTodo = {deleteTodo}
               match = {useMatch("/:id")}

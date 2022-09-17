@@ -2,7 +2,8 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
 const Todo= ({todo}) => {
-
+    // const id =useParams()
+    // const todos = todo.find((p) => p.id === id)
     return(
         <div>
            <h3>{todo.title}</h3>
