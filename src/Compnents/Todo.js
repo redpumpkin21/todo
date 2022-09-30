@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom"
 const Todo= ({todo}) => {
     // const id =useParams()
     // const todos = todo.find((p) => p.id === id)
-    return(
-        <div>
+    if (todo) {
+        return(
+            <div>
            <h3>{todo.title}</h3>
            <p>{todo.description}</p>
            <h1>{todo._id}</h1>
@@ -13,8 +14,22 @@ const Todo= ({todo}) => {
            <Link to = "/:id">
                 <button> single here</button>
            </Link>
-        </div>
-    )
+        </div> 
+        )
+    } else{
+        return <h1>No todos</h1>
+    }
+    // return(
+    //     <div>
+    //        <h3>{todo.title}</h3>
+    //        <p>{todo.description}</p>
+    //        <h1>{todo._id}</h1>
+    //        <p>sd</p>
+    //        <Link to = "/:id">
+    //             <button> single here</button>
+    //        </Link>
+    //     </div>
+    // )
 }
 
 export default Todo
