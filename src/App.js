@@ -35,11 +35,7 @@ const addTodo = async(newTodo) => {
   getTodos()
 }
 
-// const addTodo = (newTodo) => {
-//   const newState = [...todoList]
-//   newState.push(newTodo)
-//   setTodoList(newState)
-// }
+
  useEffect (() => {getTodos()}, [])
 
 const getTargetTodo = (todo) => {
@@ -69,6 +65,7 @@ const deleteTodo = async (todo) => {
   return (
     <div className="App">
       <header className="App-header">
+        <h1 className = "header">What ToDo today</h1>
        <Link to = "/new">
         <button>New Task</button>
        </Link>
@@ -78,17 +75,11 @@ const deleteTodo = async (todo) => {
           <Route path = "/" element={
             <AllTodo todo = {todos}
               edit = {getTargetTodo}
+              deleteTodo = {deleteTodo}
             />}>
           </Route>
 
-          {/* <Route path = "/:id" element = {
-            <SingleTodo todo = {todos}
-              edit = {getTargetTodo}
-              deleteTodo = {deleteTodo}
-              match = {useMatch("/:id")}
-
-            />}> */}
-          {/* </Route> */}
+         
           <Route path ="/new" element = {
             <Form initialTodo = {nullTodo}
               handleSubmit = {addTodo}
