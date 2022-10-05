@@ -13,7 +13,7 @@ const AllTodo = (props) => {
             <button onClick={(event) =>{
               props.deleteTodo(todo)
               navigate("/")
-            }} className= "delete"> Delete</button>
+            }} className= "delete"> Finished</button>
           </ul> ))}
       </div>
             
