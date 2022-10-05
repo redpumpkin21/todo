@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  height: 100vh;
+  background-image: url("https://static8.depositphotos.com/1570716/1049/i/950/depositphotos_10495668-stock-photo-cork-board-background.jpg")
+  /* background-size: cover; */
 }
 
 .App-logo {
@@ -7,3 +10,40 @@
   pointer-events: none;
 }
 
+.App header{
+  height: 100%
+}
+
+.Footer{
+  bottom: 0;
+  text-align: center;
+  position: fixed;
+}
+
+.navbar-brand{
+  text-align: center;
+}
+
+.todo{
+
+  margin-top: 5%;
+  margin-bottom: 10%;
+}
+
+.singleTodo{
+  margin-bottom: 10%;
+  background-color: yellow;
+}
+.form{
+  margin-top: 5%;
+  
+}
+
+.singleTodo{
+  border-style: double;
+  margin-left: 30%;
+  margin-right: 30%;
+  
+  padding-left: 0;
+  
+}

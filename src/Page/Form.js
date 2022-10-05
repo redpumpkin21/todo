@@ -17,9 +17,9 @@ const Form = ({initialTodo, handleSubmit, buttonLabel, history, props}) => {
         navigate("/")
      }
     return(
-        <div>
+        <div className = "form">
 
-        <h1>hey</h1>
+        <h1></h1>
         <form onSubmit = {handleSubmission}>
             <input
                 type = "text"

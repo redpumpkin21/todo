@@ -2,10 +2,10 @@ import { useState, useEffect } from 'react';
 import { Route, Routes, Link, useMatch, useNavigate } from 'react-router-dom';
 import './App.css';
 import AllTodo from './Page/AllTodos';
-import SingleTodo from './Page/singleTodo';
 import Form from './Page/Form';
 import Home from './Page/Home';
-import React from 'react';
+import Navar from './Components/Nav';
+import Footer from './Components/Footer';
 
 function App() {
   const navigate = useNavigate()
@@ -65,11 +65,12 @@ const deleteTodo = async (todo) => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 className = "header">What ToDo today</h1>
-       <Link to = "/new">
+      
+      <Navar />
+      <Link to = "/new">
         <button>New Task</button>
-       </Link>
-
+      </Link>
+        
         <Routes>
 
           <Route path = "/" element={
@@ -94,7 +95,7 @@ const deleteTodo = async (todo) => {
 
           </Route>
         </Routes>
-
+        <Footer />
       </header>
     </div>
   );
