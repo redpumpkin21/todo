@@ -68,7 +68,7 @@ const deleteTodo = async (todo) => {
       
       <Navar />
       <Link to = "/new">
-        <button>New Task</button>
+        <button className = "new">New Task</button>
       </Link>
         
         <Routes>

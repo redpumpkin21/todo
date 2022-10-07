@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   height: 100vh;
-  background-image: url("https://static8.depositphotos.com/1570716/1049/i/950/depositphotos_10495668-stock-photo-cork-board-background.jpg");
+  background-image: url("https://previews.123rf.com/images/jojjik/jojjik1205/jojjik120500256/13859455-large-corkboard-texture-or-background.jpg");
   background-size: cover;
 }
 
@@ -26,10 +26,15 @@
   background-color: brown;
 }
 
+.new{
+  margin-top: 10%;
+  /* position: fixed */
+}
+
 .todo{
   margin-top: 5%;
   margin-bottom: 10%;
-  background-image: url("https://static8.depositphotos.com/1570716/1049/i/950/depositphotos_10495668-stock-photo-cork-board-background.jpg");
+  background-image: url("https://previews.123rf.com/images/jojjik/jojjik1205/jojjik120500256/13859455-large-corkboard-texture-or-background.jpg");
   background-size: cover;
 }
 
@@ -54,3 +59,18 @@
 .description{
   text-align: left;
 }
+
+@media only screen and (min-width: 768px){
+  .singleTodo{
+    height: 20vh;
+  }
+
+}
+
+@media only screen and (min-width: 1024px){
+  .singleTodo{
+    height: 40vh;
+    
+  }
+}
+
