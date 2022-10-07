@@ -18,12 +18,12 @@
   bottom: 0;
   text-align: center;
   position: fixed;
-  background-color: brown;
+  background-color: #4D3211;
   width: 100%;
 }
 
 .navbar{
-  background-color: brown;
+  background-color: #4D3211;
 }
 
 .new{
@@ -51,20 +51,26 @@
   border-style: double;
   margin-left: 30%;
   margin-right: 30%;
-  
+  position: relative;
   padding-left: 0;
   
 }
 
-.description{
-  text-align: left;
+.delete{
+  width:100%
 }
-
 @media only screen and (min-width: 768px){
   .singleTodo{
     height: 20vh;
+    position: relative;
   }
-
+  button.delete{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    /* margin-right: 5%; */
+    
+  }
 }
 
 @media only screen and (min-width: 1024px){
