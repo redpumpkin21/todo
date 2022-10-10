@@ -19,7 +19,7 @@
   text-align: center;
   position: fixed;
   background-color: #4D3211;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .navbar{
@@ -61,8 +61,9 @@
 }
 @media only screen and (min-width: 768px){
   .singleTodo{
-    height: 20vh;
-    position: relative;
+    height: 15vh!important;
+    margin: 0 0 10% 0;
+    
   }
   button.delete{
     position: absolute;
@@ -80,3 +81,12 @@
   }
 }
 
+@media only screen and (min-width: 1440px){
+  .singleTodo{
+    height: 15vh!important;
+    width: 40%;
+    margin-left: 30%;
+    margin-bottom: 2%;
+    
+  }
+}
