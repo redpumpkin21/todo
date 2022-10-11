@@ -1,7 +1,9 @@
 .App {
   text-align: center;
   height: 100vh;
-  background-image: url("https://previews.123rf.com/images/jojjik/jojjik1205/jojjik120500256/13859455-large-corkboard-texture-or-background.jpg");
+  /* background-image: url("https://previews.123rf.com/images/jojjik/jojjik1205/jojjik120500256/13859455-large-corkboard-texture-or-background.jpg");
+   */
+   background-color: #ECB181;
   background-size: cover;
 }
 
@@ -33,35 +35,38 @@
 
 .todo{
   margin-top: 5%;
-  margin-bottom: 10%;
-  background-image: url("https://previews.123rf.com/images/jojjik/jojjik1205/jojjik120500256/13859455-large-corkboard-texture-or-background.jpg");
+  /* margin-bottom: 10%; */
+  /* background-image: url("https://previews.123rf.com/images/jojjik/jojjik1205/jojjik120500256/13859455-large-corkboard-texture-or-background.jpg"); */
+  background-color: #ECB181;
   background-size: cover;
 }
 
 .singleTodo{
   margin-bottom: 10%;
   background-color: #FCE851;
+  border-style: double;
+  margin-left: 30%;
+  margin-right: 30%;
+  position: relative;
+  padding-left: 0;
 }
 .form{
   margin-top: 5%;
   
 }
 
-.singleTodo{
-  border-style: double;
-  margin-left: 30%;
-  margin-right: 30%;
-  position: relative;
-  padding-left: 0;
-  
-}
+
 
 .delete{
   width:100%
 }
+
+.description{
+  margin: 0;
+}
 @media only screen and (min-width: 768px){
   .singleTodo{
-    height: 15vh!important;
+    height: 12vh!important;
     margin: 0 0 10% 0;
     
   }
@@ -83,7 +88,7 @@
 
 @media only screen and (min-width: 1440px){
   .singleTodo{
-    height: 15vh!important;
+    height: 12vh!important;
     width: 40%;
     margin-left: 30%;
     margin-bottom: 2%;
