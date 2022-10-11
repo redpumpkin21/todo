@@ -18,11 +18,16 @@ const Navar = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+  
+  const alert = () => {
+    alert("wip for authorization")
+  }
 
   return (
     <div>
       <Navbar {...args}>
         <NavbarBrand href="/">What ToDo Today</NavbarBrand>
+        
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="me-auto" navbar>

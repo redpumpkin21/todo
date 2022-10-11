@@ -6,6 +6,7 @@ import Form from './Page/Form';
 import Home from './Page/Home';
 import Navar from './Components/Nav';
 import Footer from './Components/Footer';
+import HeadNav from './Components/headnav';
 
 function App() {
   const navigate = useNavigate()
@@ -66,7 +67,8 @@ const deleteTodo = async (todo) => {
     <div className="App">
       <header className="App-header">
       
-      <Navar />
+      {/* <Navar /> */}
+      <HeadNav />
       <Link to = "/new">
         <button className = "new">New Task</button>
       </Link>
