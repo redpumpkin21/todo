@@ -3,7 +3,7 @@
   height: 100vh;
   /* background-image: url("https://previews.123rf.com/images/jojjik/jojjik1205/jojjik120500256/13859455-large-corkboard-texture-or-background.jpg");
    */
-   background-color: #ECB181;
+   background-color: #7ECFD4;
   background-size: cover;
 }
 
@@ -60,13 +60,13 @@
   margin-top: 5%;
   /* margin-bottom: 10%; */
   /* background-image: url("https://previews.123rf.com/images/jojjik/jojjik1205/jojjik120500256/13859455-large-corkboard-texture-or-background.jpg"); */
-  background-color: #ECB181;
+  background-color: #7ECFD4;
   background-size: cover;
 }
 
 .singleTodo{
   /* margin-bottom: 10%; */
-  background-color: #FCE851;
+  background-color: #FFCC06;
   border-style: double;
   /* margin-left: 30%;
   margin-right: 30%; */
